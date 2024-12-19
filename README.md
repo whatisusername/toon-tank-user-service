@@ -27,3 +27,64 @@ go install github.com/vektra/mockery/v2@v2.50.4
   ```cmd
   make -v
   ```
+
+### Docker
+
+- [WSL](https://learn.microsoft.com/zh-tw/windows/wsl/install)
+- [Docker Desktop on Windows](https://docs.docker.com/desktop/install/windows-install/)
+
+### Terraform
+
+- Download [Terraform](https://developer.hashicorp.com/terraform/install#windows)
+- Extract the downloaded file to `C:\Program Files\HashiCorp\Terraform`
+- Add the Terraform directory to your system's `Path` in the Environment Variables.
+- Verify the installation by running the following command in the Command Prompt:
+
+  ```cmd
+  terraform version
+  ```
+
+### (Optional) AWS
+
+If you want to locally test the Docker image that is built for the Lambda Function.
+
+- [aws-lambda-runtime-interface-emulator](https://github.com/aws/aws-lambda-runtime-interface-emulator/)
+
+## Build Docker Image
+
+```cmd
+make build
+```
+
+## Run the Docker Image Locally
+
+```cmd
+make local_run
+```
+
+## Test the API Locally
+
+- Sign Up
+
+```cmd
+curl "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"version":"2.0","path":"/v1/users","httpMethod":"POST","body":"{\"username\":\"<username>\",\"email\":\"<email>\",\"password\":\"<password>\"}","isBase64Encoded":false}'
+```
+
+## Deploy the Lambda Function
+
+Use the `make` command to deploy the service to your desired environment:
+
+- Replace `ENV=dev` with your target environment, e.g., dev, stag, prod.
+- Ensure that your AWS credentials are properly configured before deployment.
+
+```cmd
+make tf_init ENV=dev
+```
+
+```cmd
+make tf_plan
+```
+
+```cmd
+make tf_deploy
+```
