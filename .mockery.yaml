@@ -1,0 +1,19 @@
+quiet: False
+disable-version-string: True
+with-expecter: True
+issue-845-fix: True
+packages:
+  github.com/whatisusername/toon-tank-user-service/internal/aws:
+    interfaces:
+      SecretStore:
+        config:
+          dir: "{{.InterfaceDir}}"
+          outpkg: "{{.PackageName}}"
+          filename: "secrets_mock.go"
+          inpackage: True
+      CognitoAuthService:
+        config:
+          dir: "{{.InterfaceDir}}"
+          outpkg: "{{.PackageName}}"
+          filename: "cognito_mock.go"
+          inpackage: True

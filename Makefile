@@ -8,25 +8,29 @@ endif
 # Include the appropriate Makefile based on the OS
 ifeq ($(OS_NAME), Windows)
 	SHELL := cmd
-	include Makefile.windows
 else ifeq ($(OS_NAME), Darwin)
 	SHELL := /bin/sh
-	include Makefile.mac
 else ifeq ($(OS_NAME), Linux)
 	SHELL := /bin/bash
-	include Makefile.linux
 else
 	$(error Unsupported OS: $(OS_NAME))
 endif
 
-.PHONY: build run clean
-APP_EXECUTABLE := main
-build:
-	go build -o $(APP_EXECUTABLE) cmd/main.go
+# Targets
+.PHONY: test gen_mock
 
-run: build
-	./$(APP_EXECUTABLE)
+test:
+ifeq ($(OS_NAME), Windows)
+	@if not exist "docs\" ( \
+		mkdir docs \
+	)
+else
+	@if [[ -d "docs" ]]; then \
+		mkdir docs; \
+	fi
+endif
+	go test ./... -v -coverprofile="docs/coverage.out"
+	go tool cover -html="docs/coverage.out" -o "docs/coverage.html"
 
-clean:
-	go clean
-	rm $(APP_EXECUTABLE)
+gen_mock:
+	mockery
