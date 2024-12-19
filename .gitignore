@@ -1,0 +1,56 @@
+# Ignore all files by default, but scan all directories
+*
+!*/
+
+# Go files
+!*.go
+!go.mod
+!go.sum
+
+# Text files
+!*.md
+
+# Script files
+!*.bat
+!*.sh
+!*.ps1
+!*.command
+
+# Database-related files
+!*.sql
+
+# Other configuration and markup files
+!.git*
+!.dockerignore
+!.editorconfig
+!*.ini
+!*.json
+!*.plist
+!*.yaml
+!*.yml
+
+# Projects and makefiles
+!*.code-snippets
+!*Dockerfile
+!Makefile
+!Makefile.*
+
+# Specific names
+!README
+!AUTHORS
+!LICENSE
+!FAQ
+!VERSION
+!ChangeLog
+
+# Ignore GoLand directory
+.idea/
+
+# Annoying windows files
+[Dd]esktop.ini
+
+# Ignore Unix backup files
+*~
+
+# Explcitly ignore Mac DS_Store files, regardless of where they are
+.DS_Store

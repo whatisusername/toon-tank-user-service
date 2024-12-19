@@ -1,0 +1,43 @@
+name: Bug report
+description: Create a report to help us improve.
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for opening a bug report.
+        Please do *NOT* ask support questions in Github issues.
+  - type: textarea
+    attributes:
+      label: What did you do?
+      description: Please provide steps for us to reproduce this issue.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What did you expect to see?
+  - type: textarea
+    attributes:
+      label: What did you see instead? Under which circumstances?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Environment
+  - type: input
+    attributes:
+      label: System information
+      description: insert output of `uname -srm` here, or operating system version
+      placeholder: e.g. Linux 5.16.15 x86_64
+  - type: textarea
+    attributes:
+      label: Configuration file
+      description: Insert relevant configuration here. Don't forget to remove secrets.
+      render: yaml
+  - type: textarea
+    attributes:
+      label: Logs
+      description: Insert the logs relevant to the issue here.
+      render: text
