@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/whatisusername/toon-tank-user-service/compare/v1.0.0...v1.0.1) (2025-01-09)
+
+
+### Bug Fixes
+
+* Do not hardcode the profile value ([#3](https://github.com/whatisusername/toon-tank-user-service/issues/3)) ([c97b0ea](https://github.com/whatisusername/toon-tank-user-service/commit/c97b0eac96deb16cadea2e8848b1e6ef94056771))
+* Update the tag pattern for deploy job ([#2](https://github.com/whatisusername/toon-tank-user-service/issues/2)) ([11b1a58](https://github.com/whatisusername/toon-tank-user-service/commit/11b1a5801f69555196011218c8b8036938f1a6fc))
+
 ## 1.0.0 (2025-01-09)
 
 
