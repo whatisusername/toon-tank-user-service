@@ -10,6 +10,12 @@ variable "product" {
   default     = "ToonTank"
 }
 
+variable "profile" {
+  type        = string
+  description = "The AWS profile to use for the deployment."
+  default     = null
+}
+
 variable "env" {
   description = "The environment name. Should be dev/stag/prod"
   type        = string

@@ -14,8 +14,6 @@ terraform {
     bucket         = "toontank-terraform-state-us-west-2"
     encrypt        = true
     dynamodb_table = "toontank-terraform-locks"
-
-    profile        = "TerraformBackend"
     assume_role = {
       role_arn     = "arn:aws:iam::846072081665:role/TerraformStateAccessRole"
       session_name = "TerraformSession"

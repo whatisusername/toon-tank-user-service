@@ -2,7 +2,7 @@
 
 provider "aws" {
   region  = var.region
-  profile = "TerraformDeploy"
+  profile = var.profile
 
   assume_role {
     role_arn     = "arn:aws:iam::846072081665:role/TerraformDeployDevRole"
