@@ -33,7 +33,7 @@ ifeq ($(OS_NAME), Windows)
 		mkdir docs \
 	)
 else
-	@if [[ -d "docs" ]]; then \
+	@if [[ ! -d "docs" ]]; then \
 		mkdir docs; \
 	fi
 endif
@@ -49,18 +49,16 @@ ifeq ($(OS_NAME), Windows)
 	@if exist "$(TF_PATH)\.terraform\" ( \
 		rmdir /S /Q "$(TF_PATH)\.terraform" \
 	)
-	@( \
-		echo env = "$(ENV)" \
-	) > $(TF_PATH)\variables.auto.tfvars
+	@echo env     = "$(ENV)"> $(TF_PATH)\variables.auto.tfvars
+	@echo profile = "TerraformDeploy">> $(TF_PATH)\variables.auto.tfvars
 else
 	@if [[ -d "$(TF_PATH)/.terraform" ]]; then \
 		rm -rf "$(TF_PATH)/.terraform"; \
 	fi
-	@cat $(TF_PATH)/variables.auto.tfvars <<EOF \
-	env = "$(ENV)" \
-	EOF
+	@echo "env     = \"$(ENV)\"" > $(TF_PATH)/variables.auto.tfvars
+	@echo "profile = \"TerraformDeploy\"" >> $(TF_PATH)/variables.auto.tfvars
 endif
-	terraform -chdir=$(TF_PATH) init -backend-config='key=$(ENV)/lambda/$(LAMBDA_NAME)/terraform.tfstate'
+	terraform -chdir=$(TF_PATH) init -backend-config='key=$(ENV)/lambda/$(LAMBDA_NAME)/terraform.tfstate' -backend-config='profile=TerraformBackend'
 
 tf_plan:
 	terraform -chdir=$(TF_PATH) plan -out=tfplan
