@@ -7,6 +7,14 @@
 !go.mod
 !go.sum
 
+# Terraform files
+!*.tf
+!*.tftpl
+!*.lock.hcl
+
+# Ignore Terraform init directory
+**/.terraform/
+
 # Text files
 !*.md
 
