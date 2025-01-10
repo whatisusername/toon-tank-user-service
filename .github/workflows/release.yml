@@ -20,6 +20,8 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+          # Use the PAT to checkout the codes, see https://github.com/cycjimmy/semantic-release-action/issues/128
+          token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
       - name: Release
         uses: cycjimmy/semantic-release-action@v4
         env:
