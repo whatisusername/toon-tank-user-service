@@ -1,6 +1,9 @@
 name: Deploy to AWS
 
 on:
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       region:
@@ -20,9 +23,6 @@ on:
         required: true
         type: string
         default: 'userAuthHandler'
-  push:
-    tags:
-      - 'v*'
 
 env:
   AWS_REGION: ${{ github.event.inputs.region || 'us-west-2' }}
