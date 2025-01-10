@@ -22,7 +22,7 @@ on:
         default: 'userAuthHandler'
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v*'
 
 env:
   AWS_REGION: ${{ github.event.inputs.region || 'us-west-2' }}
