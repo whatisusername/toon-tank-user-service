@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/whatisusername/toon-tank-user-service/compare/v1.0.1...v1.0.2) (2025-01-10)
+
+
+### Bug Fixes
+
+* Ensure the deploy job is triggered after pushing a tag ([#4](https://github.com/whatisusername/toon-tank-user-service/issues/4)) ([d9b9bfa](https://github.com/whatisusername/toon-tank-user-service/commit/d9b9bfacbbc8501f7946a48a5b0a122cd0035e80))
+
 ## [1.0.1](https://github.com/whatisusername/toon-tank-user-service/compare/v1.0.0...v1.0.1) (2025-01-09)
 
 
