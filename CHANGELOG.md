@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/whatisusername/toon-tank-user-service/compare/v1.0.3...v1.0.4) (2025-01-10)
+
+
+### Bug Fixes
+
+* Attempt to resolve tag trigger issue ([#6](https://github.com/whatisusername/toon-tank-user-service/issues/6)) ([3884106](https://github.com/whatisusername/toon-tank-user-service/commit/388410694322d7fcdb3ef05a19e5754f0ba8f68b))
+
 ## [1.0.3](https://github.com/whatisusername/toon-tank-user-service/compare/v1.0.2...v1.0.3) (2025-01-10)
 
 
