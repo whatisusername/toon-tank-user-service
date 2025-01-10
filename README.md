@@ -1,3 +1,6 @@
+![CI](https://github.com/whatisusername/toon-tank-user-service/actions/workflows/test.yml/badge.svg)
+![Go Version](https://img.shields.io/badge/Go-1.22.2-lightgrey.svg)
+
 # User Service
 
 This service manages user sign-up/sign-in functionality and returns an access token to the client. It integrates seamlessly with AWS Secrets Manager and Cognito for secure authentication.
